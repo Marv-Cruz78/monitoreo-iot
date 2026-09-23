@@ -1,0 +1,88 @@
+/* ==========================================
+   ESTILOS GENERALES Y TEMA OSCURO MODERN
+   ========================================== */
+:root {
+  --bg-principal: #0f172a;        /* Azul noche profundo */
+  --bg-card: #1e293b;             /* Azul pizarra para tarjetas */
+  --bg-card-hover: #334155;       /* Resalte al pasar el cursor */
+  --color-texto: #f8fafc;         /* Blanco suave */
+  --color-subtexto: #94a3b8;      /* Gris claro para subtítulos */
+  --color-temp: #ff5252;          /* Rojo Neón para temperatura */
+  --color-humedad: #00e5ff;       /* Cyan Neón para humedad */
+  --borde-tarjeta: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--bg-principal) !important;
+  color: var(--color-texto) !important;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+/* ==========================================
+   TITULOS Y ENCABEZADOS
+   ========================================== */
+h1, h2, h3, .h1, .h2, .h3 {
+  color: var(--color-texto) !important;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.text-muted, p.text-secondary {
+  color: var(--color-subtexto) !important;
+}
+
+/* ==========================================
+   TARJETAS Y CONTENEDORES (Glassmorphism)
+   ========================================== */
+.card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--borde-tarjeta) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ==========================================
+   METRICAS Y VALORES NUMÉRICOS
+   ========================================== */
+#tempActual {
+  color: var(--color-temp) !important;
+  font-weight: 800;
+  font-size: 2.75rem;
+  text-shadow: 0 0 18px rgba(255, 82, 82, 0.35); /* Resplandor Neón */
+}
+
+#humActual {
+  color: var(--color-humedad) !important;
+  font-weight: 800;
+  font-size: 2.75rem;
+  text-shadow: 0 0 18px rgba(0, 229, 255, 0.35); /* Resplandor Neón */
+}
+
+/* Rediseño de bordes laterales/superiores de tarjetas */
+.card-body {
+  padding: 1.5rem !important;
+}
+
+/* ==========================================
+   AJUSTE DE LA GRAFICA (Chart.js)
+   ========================================== */
+.canvas-wrapper {
+  position: relative;
+  width: 100% !important;  /* Fuerza el ancho completo */
+  height: 420px;            /* Altura equilibrada para pantallas de escritorio */
+}
+
+/* Asegurar que las tarjetas de métricas superiores también se distribuyan bien */
+.chart-container {
+  width: 100%;
+}
